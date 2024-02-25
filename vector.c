@@ -36,8 +36,8 @@ void reserve(vector *v, size_t newCapacity) {
 }
 
 int main() {
-    vector v = createVector(SIZE_MAX);
-    /*vector v = {NULL, 5, 8};
+    //vector v = createVector(SIZE_MAX);
+    vector v = {NULL, 5, 8};
     reserve(&v, 3);
 
     for (size_t i = 0; i < 5; i++) {
@@ -60,6 +60,6 @@ int main() {
     reserve(&v, 0);
 
     free(v.data);
-*/
+
     return 0;
 }
