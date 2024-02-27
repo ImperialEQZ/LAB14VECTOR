@@ -30,24 +30,45 @@ void clearVector(vector *v) {
     v->size = 0;
 }
 
-void reserveVector(vector *v, const size_t new_capacity) {
-    if ( new_capacity == 0 ) {
-        deleteVector(v);
+void reserveVector(vector *v, size_t newCapacity) {
+    if (newCapacity == 0){
+        v->data = NULL;
     }
-    else {
-        if (v->size > new_capacity)
-            v->size = new_capacity;
 
-        v->capacity = new_capacity;
-        v->data = realloc(v->data,v->capacity);
-        if (!v->data) {
-            fprintf(stderr, "bad alloc");
-        }
+    if (newCapacity < v->size){
+        v->size = newCapacity;
     }
+
+    v->capacity = newCapacity;
+    v->data = (int *) realloc(v->data, newCapacity * sizeof(int));
+
+    if (v->data == NULL){
+        fprintf(stderr, "bad alloc");
+        exit(1);
+    }
+
+}
+
+void pushBackVector(vector *v, const int x) {
+    if (!v->capacity)
+        reserveVector(v, 1);
+
+    if (v->size >= v->capacity)
+        reserveVector(v, v->capacity * 2);
+
+    v->data[v->size++] = x;
 }
 
 void shrinkToFit(vector *v) {
     reserveVector(v, v->size);
+}
+
+bool vector_isEmpty(const vector v) {
+    return v.size == 0;
+}
+
+bool vector_isFull(const vector v) {
+    return v.size == v.capacity;
 }
 
 

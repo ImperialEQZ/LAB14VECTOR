@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <malloc.h>
 #include <stdint.h>
+#include <stdbool.h>
 typedef struct vector {
     int *data; // указатель на элементы вектора
     size_t size; // размер вектора
