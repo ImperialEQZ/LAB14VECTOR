@@ -208,8 +208,8 @@ void test_front_oneElementInVector() {
     v.size = 1;
     v.data[0] = 20;
 
-    printf("\n front_oneElementInVector address: %d \n", back(&v));
-    printf("\n front_oneElementInVector value: %d \n", *back(&v));
+    printf("\n front_oneElementInVector address: %d \n", front(&v));
+    printf("\n front_oneElementInVector value: %d \n", *front(&v));
 }
 int main() {
 
