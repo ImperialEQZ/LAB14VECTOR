@@ -9,6 +9,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <assert.h>
+#include <memory.h>
 typedef struct vectorVoid {
     void *data; // указатель на нулевой элемент вектора
     size_t size; // размер вектора

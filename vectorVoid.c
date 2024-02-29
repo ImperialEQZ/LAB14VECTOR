@@ -52,3 +52,63 @@ void deleteVectorV(vectorVoid *v) {
     v->capacity = 0;
     v->baseTypeSize = 0;
 }
+//является ли вектор пустым
+bool vector_isEmptyV(const vectorVoid v) {
+    return v.size == 0;
+}
+//является ли вектор полным
+bool vector_isFullV(const vectorVoid v) {
+    return v.size == v.capacity;
+}
+//записывает по адресу destination index-ый элемент вектора v.
+void getVectorValueV(vectorVoid *v, size_t index, void *destination) {
+    if (!v->data) {//Ошибка доступа к памяти
+        fprintf(stderr, "Error accessing vector memory");
+    }
+    if (v->size <= index) {//индекс за пределами вектора
+        fprintf(stderr, "index has gone beyond range of vector");
+    }
+
+    char *source = (char *) v->data + index * v->baseTypeSize;
+    memcpy(destination, source, v->baseTypeSize);
+}
+/*записывает на index-ый элемент вектора v значение, расположенное по
+адресу source */
+void setVectorValueV(vectorVoid *v, size_t index, void *source) {
+    if (!v->data) {//Ошибка доступа к памяти
+        fprintf(stderr, "Error accessing vector memory");
+    }
+    if (v->size <= index) {//индекс за пределами вектора
+        fprintf(stderr, "index has gone beyond range of vector");
+    }
+
+    char *destination = (char *) v->data + index * v->baseTypeSize;
+    memcpy(destination, source, v->baseTypeSize);
+}
+//Добавляет
+void pushBackVectorV(vectorVoid *v, void *source) {
+    if (!v->capacity)
+        reserveVectorV(v, 1);
+
+    if (v->size >= v->capacity)
+        reserveVectorV(v, v->capacity * 2);
+
+    setVectorValueV(v, v->size++, source);
+}
+//удаляет
+void popBackVectorV(vectorVoid *v) {
+    if (!v->data) {
+        fprintf(stderr, "Error: Failed access to vector's memory in VectorpopBack\n");
+    }
+
+    if (v->size == 0) {
+        fprintf(stderr,"Error: Vector is empty in VectorpopBack\n");
+    }
+
+    (v->size)--;
+}
+
+
+
+
+

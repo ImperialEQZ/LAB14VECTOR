@@ -1,7 +1,6 @@
 //
 // Created by Александр on 25.02.2024.
 //
-
 #ifndef LAB14VECTOR_VECTOR_H
 #define LAB14VECTOR_VECTOR_H
 #include <stdio.h>

@@ -186,8 +186,8 @@ void test_atVector_requestToLastElement(){
     v.data[1] = 20;
     v.data[2] = 20;
 //Вывод в 16ричной с\с чтобы посмотреть нормально адрес
-    printf("\n requestToLastElement value: %x \n", *atVector(&v, 2));
-    printf("\n requestToLastElement address: %d \n", atVector(&v, 2));
+    printf("\n requestToLastElement address: %x \n", atVector(&v, 2));
+    printf("\n requestToLastElement value: %d \n", *atVector(&v, 2));
 }
 
 void test_back_oneElementInVector(){
