@@ -61,6 +61,12 @@ build CMakeFiles/LAB14Vector.dir/vector.c.obj: C_COMPILER__LAB14Vector_unscanned
   OBJECT_DIR = CMakeFiles\LAB14Vector.dir
   OBJECT_FILE_DIR = CMakeFiles\LAB14Vector.dir
 
+build CMakeFiles/LAB14Vector.dir/vectorVoid.c.obj: C_COMPILER__LAB14Vector_unscanned_Debug C$:/Users/Александр/CLionProjects/LAB14Vector/vectorVoid.c || cmake_object_order_depends_target_LAB14Vector
+  DEP_FILE = CMakeFiles\LAB14Vector.dir\vectorVoid.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\LAB14Vector.dir
+  OBJECT_FILE_DIR = CMakeFiles\LAB14Vector.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target LAB14Vector
@@ -69,7 +75,7 @@ build CMakeFiles/LAB14Vector.dir/vector.c.obj: C_COMPILER__LAB14Vector_unscanned
 #############################################
 # Link the executable LAB14Vector.exe
 
-build LAB14Vector.exe: C_EXECUTABLE_LINKER__LAB14Vector_Debug CMakeFiles/LAB14Vector.dir/main.c.obj CMakeFiles/LAB14Vector.dir/vector.c.obj
+build LAB14Vector.exe: C_EXECUTABLE_LINKER__LAB14Vector_Debug CMakeFiles/LAB14Vector.dir/main.c.obj CMakeFiles/LAB14Vector.dir/vector.c.obj CMakeFiles/LAB14Vector.dir/vectorVoid.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\LAB14Vector.dir

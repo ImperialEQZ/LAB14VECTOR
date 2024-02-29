@@ -5,4 +5,6 @@ set(CMAKE_C_STANDARD 11)
 
 add_executable(LAB14Vector main.c
         vector.h
-        vector.c)
+        vector.c
+        vectorVoid.h
+        vectorVoid.c)

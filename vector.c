@@ -173,8 +173,8 @@ void test_atVector_notEmptyVector() {
     v.data[2] = 22;
     v.data[3] = 23;
 
-    printf("\n atVector_notEmptyVector address: %d\n", atVector(&v, 2));
-    printf("\n atVector_notEmptyVector value: %d\n", *atVector(&v, 2));
+    printf("\n atVector_notEmptyVector address: %x \n", atVector(&v, 2));
+    printf("\n atVector_notEmptyVector value: %d \n", *atVector(&v, 2));
 }
 
 void test_atVector_requestToLastElement(){
@@ -185,8 +185,8 @@ void test_atVector_requestToLastElement(){
     v.data[0] = 20;
     v.data[1] = 20;
     v.data[2] = 20;
-
-    printf("\n requestToLastElement value: %d \n", *atVector(&v, 2));
+//Вывод в 16ричной с\с чтобы посмотреть нормально адрес
+    printf("\n requestToLastElement value: %x \n", *atVector(&v, 2));
     printf("\n requestToLastElement address: %d \n", atVector(&v, 2));
 }
 
@@ -196,8 +196,8 @@ void test_back_oneElementInVector(){
 
     v.size = 1;
     v.data[0] = 20;
-
-    printf("\n back_oneElementInVector address: %d \n", back(&v));
+//Вывод в 16ричной с\с чтобы посмотреть нормально адрес
+    printf("\n back_oneElementInVector address: %x \n", back(&v));
     printf("\n back_oneElementInVector value: %d \n", *back(&v));
 }
 
@@ -207,8 +207,8 @@ void test_front_oneElementInVector() {
 
     v.size = 1;
     v.data[0] = 20;
-
-    printf("\n front_oneElementInVector address: %d \n", front(&v));
+//Вывод в 16ричной с\с чтобы посмотреть нормально адрес
+    printf("\n front_oneElementInVector address: %x \n", front(&v));
     printf("\n front_oneElementInVector value: %d \n", *front(&v));
 }
 int main() {
